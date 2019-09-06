@@ -11,7 +11,7 @@ public class Graphics {
 
     public Graphics(int w, int h, int bs) {
 
-        // Add statements to initialize width, blocksize and height
+        // Add statements to initialize width, blockSize and height
         width = w;
         height = h;
         blockSize = bs;
@@ -40,20 +40,20 @@ public class Graphics {
         return width;
     }
 
-    public int getHeight(){
+    public int getHeight() {
         return height;
     }
 
-    public void rectangle(int x, int y, int width, int height, Color c){
+    public void rectangle(int x, int y, int width, int height, Color c) {
 
-        for (int yy = y; yy <y + height; yy ++) {
-            for (int xx = x; xx <x + width; xx ++) {
-                block (xx, yy, c);
+        for (int yy = y; yy < y + height; yy++) {
+            for (int xx = x; xx < x + width; xx++) {
+                block(xx, yy, c);
             }
         }
     }
 
-    public char waitForKey(){
+    public char waitForKey() {
         return w.waitForKey();
     }
 
