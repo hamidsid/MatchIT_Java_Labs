@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Mole {
 
     private static int width = 60;

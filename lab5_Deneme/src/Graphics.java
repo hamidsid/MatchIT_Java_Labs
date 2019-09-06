@@ -16,7 +16,7 @@ public class Graphics {
         height = h;
         blockSize = bs;
 
-        this.w = new SimpleWindow(width * blockSize, height * blockSize, "Digging");
+        this.w = new SimpleWindow(width * blockSize, height * blockSize, "Mole Talpa Ground Game");
     }
 
     public void square() {
