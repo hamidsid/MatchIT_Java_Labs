@@ -1,57 +1,99 @@
 import se.lth.cs.pt.window.SimpleWindow;
 
+import java.awt.*;
+
 public class Turtle {
+    private double x;
+    private double y;
+    private boolean isPendDown;
+    private SimpleWindow w;
+    private double headDirection = (Math.PI / 2);
 
-	/** Skapar en sköldpadda som ritar i ritfönstret w. Från början 
-	    befinner sig sköldpaddan i punkten x, y med pennan lyft och 
-	    huvudet pekande rakt uppåt i fönstret (i negativ y-riktning). */
-	public Turtle(SimpleWindow w, int x, int y) {
+    /**
+     * Skapar en sköldpadda som ritar i ritfönstret w. Från början befinner sig
+     * sköldpaddan i punkten x,y med pennan lyft och huvudet pekande rakt uppåt
+     * i fönstret (i negativ y-riktning)
+     */
+    public Turtle(SimpleWindow w, double x, double y) {
+        this.w = w;
+        this.x = x;
+        this.y = y;
+    }
 
-	}
+    /**
+     * Sänker pennan
+     */
+    public void penDown() {
+        isPendDown = true;
+    }
 
-	/** Sänker pennan. */
-	public void penDown() {
+    /**
+     * Lyfter pennan
+     */
+    public void penUp() {
+        isPendDown = false;
+    }
 
-	}
-	
-	/** Lyfter pennan. */
-	public void penUp() {
+    /**
+     * Går rakt framåt n pixlar i den riktning som huvudet pekar
+     */
+    public void forward(int n) {
 
-	}
-	
-	/** Går rakt framåt n pixlar i den riktning huvudet pekar. */
-	public void forward(int n) {
+        //first check if pen is down
+        if (isPendDown) {
+            w.moveTo((int) Math.round(x), (int) Math.round(y));
+            x += n * Math.cos(headDirection);
+            y -= n * Math.sin(headDirection);
+            w.lineTo((int) Math.round(x), (int) Math.round(y));
+        }
+    }
 
-	}
+    /**
+     * Vrider beta grader åt vänster runt pennan
+     */
+    public void left(int beta) {
 
-	/** Vrider beta grader åt vänster runt pennan. */
-	public void left(int beta) {
+        //change degree to radian
+        this.headDirection += Math.toRadians(beta);
+    }
 
-	}
+    /**
+     * Går till punkten newX,newY utan att rita. Pennans läge (sänkt eller lyft)
+     * och huvudets riktning påverkas inte
+     */
+    public void jumpTo(int newX, int newY) {
+        this.x = newX;
+        this.y = newY;
+        w.moveTo(newX, newY);
 
-	/** Går till punkten newX, newY utan att rita. Pennans läge (sänkt
-	    eller lyft) och huvudets riktning påverkas inte. */
-	public void jumpTo(int newX, int newY) {
-	
-	}
+    }
 
-	/** Återställer huvudriktningen till den ursprungliga. */
-	public void turnNorth() {
+    /**
+     * Återställer huvudriktningen till den ursprungliga
+     */
+    public void turnNorth() {
+        this.headDirection = Math.PI / 2;
+    }
 
-	}
+    /**
+     * Tar reda på x-koordinaten för sköldpaddans aktuella position
+     */
+    public int getX() {
+        return (int) x;
+    }
 
-	/** Tar reda på x-koordinaten för sköldpaddans aktuella position. */
-	public int getX() {
-		return 0;
-	}
+    /**
+     * Tar reda på y-koordinaten för sköldpaddans aktuella position
+     */
+    public int getY() {
+        return (int) y;
+    }
 
- 	/** Tar reda på y-koordinaten för sköldpaddans aktuella position. */
-	public int getY() {
-		return 0;
-	}
-  
-	/** Tar reda på sköldpaddans riktning, i grader från den positiva X-axeln. */
- 	public int getDirection() {
- 		return 0;
-	}
+    /**
+     * Tar reda på sköldpaddans riktning, i grader från positiv x-led
+     */
+
+    public int getDirection() {
+        return (int) Math.toDegrees(headDirection);
+    }
 }

@@ -1,4 +1,6 @@
 import se.lth.cs.pt.window.SimpleWindow;
+
+import java.awt.*;
 import java.util.Random;
 
 public class TurtleDrawRandomFigure {

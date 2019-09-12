@@ -1,3 +1,4 @@
+
 import se.lth.cs.pt.window.SimpleWindow;
 
 import java.awt.*;

@@ -33,6 +33,7 @@ public class AnimatedSquare {
                 mySquare.draw(w);
             }
 
+            //update the values of the coordinates
             xOld = xNew;
             yOld = yNew;
             mySquare.erase(w);
