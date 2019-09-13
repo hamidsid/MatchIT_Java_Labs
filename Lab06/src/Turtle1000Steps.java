@@ -16,12 +16,12 @@ public class Turtle1000Steps {
 
             //random step length within range [1,10]
             int randomStepLength = random.nextInt(10) + 1;
+
             //rotation at random number of degrees within range [-180,180]
             int randomDegreeRotation = random.nextInt(360) - 180;
             t.forward(randomStepLength);
             t.left(randomDegreeRotation);
 
-            //Delay to show it as animation
             SimpleWindow.delay(10);
         }
     }

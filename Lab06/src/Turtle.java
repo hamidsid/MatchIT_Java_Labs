@@ -41,9 +41,14 @@ public class Turtle {
 
         //first check if pen is down
         if (isPendDown) {
+
+            //start from the current position of x and y
             w.moveTo((int) Math.round(x), (int) Math.round(y));
+
+            //update x and y values with accordance to the head direction
             x += n * Math.cos(headDirection);
             y -= n * Math.sin(headDirection);
+
             w.lineTo((int) Math.round(x), (int) Math.round(y));
         }
     }
@@ -53,7 +58,7 @@ public class Turtle {
      */
     public void left(int beta) {
 
-        //change degree to radian
+        //change degree to radian and add it to the current value of head angle direction
         this.headDirection += Math.toRadians(beta);
     }
 
