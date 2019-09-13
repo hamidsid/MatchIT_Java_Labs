@@ -16,23 +16,24 @@ public class TwoTurtles {
         while (TwoTurtles.calculateDistanceBetweenTwoTurtles(t1,t2) >= 50){
 
             //random step length within range [1,10]
-            int randomStepLength1 = random.nextInt(10) + 1;
-            int randomStepLength2 = random.nextInt(10) + 1;
+            int turtle1StepLength = random.nextInt(10) + 1;
+            int turtle2StepLength = random.nextInt(10) + 1;
 
             //rotation at random number of degrees within range [-180,180]
-            int randomDegreeRotation1 = random.nextInt(360) - 180;
-            int randomDegreeRotation2 = random.nextInt(360) - 180;
+            int turtle1Rotation = random.nextInt(360) - 180;
+            int turtle2Rotation = random.nextInt(360) - 180;
 
-            t1.forward(randomStepLength1);
-            t1.left(randomDegreeRotation1);
-            t2.forward(randomStepLength2);
-            t2.left(randomDegreeRotation2);
+            t1.forward(turtle1StepLength);
+            t1.left(turtle1Rotation);
+            t2.forward(turtle2StepLength);
+            t2.left(turtle2Rotation);
 
             //Delay to show it as animation
             SimpleWindow.delay(10);
         }
     }
 
+    //Calculate distance between two turtles
     public static double calculateDistanceBetweenTwoTurtles(Turtle t1, Turtle t2) {
         double x1 = t1.getX();
         double y1 = t1.getY();
