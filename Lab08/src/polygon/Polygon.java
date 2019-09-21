@@ -7,7 +7,7 @@ public class Polygon {
     private int n; //number of vertices
 
     public Polygon() {
-        vertices = new Point[1]; //start with only one point
+        vertices = new Point[10]; // maximum of 10 points
         n = 0;
     }
 
@@ -16,28 +16,12 @@ public class Polygon {
         n++;
     }
 
-    /*private void extend(){
-        Point[] oldVertices = vertices;
-        vertices = new Point[2 * vertices.length]; // skapa dubbel plats
-        for (int i = 0; i < oldVertices.length; i++) {  // kopiera
-            vertices[i] = oldVertices[i];
+    public void removeVertex(int pos) {
+        for (int i = pos; i < n - 1; i++) {
+            vertices[i] = vertices[i + 1];
         }
-    }
-
-    *//** Definierar en ny punkt med koordinaterna x,y *//*
-    public void addVertex(int x, int y) {
-        if (n == vertices.length) extend();
-        vertices[n] = new Point(x, y);
-        n++;
-    }
-*/
-    /**
-     * Flyttar polygonen avståndet dx i x-led, dy i y-led
-     */
-    public void move(int dx, int dy) {
-        for (int i = 0; i < n; i++) {
-            vertices[i].move(dx, dy);
-        }
+        vertices[n - 1] = null; // *
+        n--;
     }
 
     public void draw(SimpleWindow w) {
