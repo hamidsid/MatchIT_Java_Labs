@@ -26,7 +26,10 @@ public class SquareRootPersistent {
 		
 		while (scanner.hasNextDouble()) {
 			double d = scanner.nextDouble();
+			System.out.println(d);
+
 			output.println(Math.sqrt(d));
+			System.out.println(Math.sqrt(d));
 		}
 		output.close();
 	}

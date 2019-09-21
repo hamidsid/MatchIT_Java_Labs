@@ -29,7 +29,7 @@ public class TwoTurtles {
             t2.left(turtle2Rotation);
 
             //Delay to show it as animation
-            SimpleWindow.delay(10);
+            //SimpleWindow.delay(5);
         }
     }
 

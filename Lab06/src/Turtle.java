@@ -84,14 +84,14 @@ public class Turtle {
      * Tar reda på x-koordinaten för sköldpaddans aktuella position
      */
     public int getX() {
-        return (int) x;
+        return (int) Math.round(x);
     }
 
     /**
      * Tar reda på y-koordinaten för sköldpaddans aktuella position
      */
     public int getY() {
-        return (int) y;
+        return (int) Math.round(y);
     }
 
     /**
