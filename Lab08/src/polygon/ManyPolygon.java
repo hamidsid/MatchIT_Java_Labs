@@ -5,6 +5,7 @@ import se.lth.cs.pt.window.SimpleWindow;
 import java.awt.*;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ManyPolygon {
@@ -18,7 +19,7 @@ public class ManyPolygon {
         Scanner scan = new Scanner(new File(fileName));
 
         //find a better way for the number of polygons
-        Polygon[] polygons = new Polygon[3];
+       Polygon[] polygons = new Polygon[3];
         SimpleWindow w = new SimpleWindow(600, 600, "A polygon");
 
         while (scan.hasNext()) { // read the whole file till the last line
