@@ -40,6 +40,10 @@ public class TestClass {
     schedule.makeSchedule(jobs);
 
     System.out.println(workers[0].getTotalTime());
-    System.out.println(workers[0].getNextJob());
+    System.out.println(workers[1].getTotalTime());
+    System.out.println(workers[2].getTotalTime());
+    System.out.println(workers[3].getTotalTime());
+    System.out.println(workers[4].getTotalTime());
+
   }
 }
