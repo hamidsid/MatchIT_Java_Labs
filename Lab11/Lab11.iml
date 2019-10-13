@@ -9,5 +9,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="cs_pt" level="project" />
     <orderEntry type="module" module-name="cs_pt" />
+    <orderEntry type="module" module-name="Lab06" />
   </component>
 </module>

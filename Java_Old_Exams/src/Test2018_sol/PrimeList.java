@@ -7,7 +7,7 @@ public class PrimeList {
 
     PrimeList(int n) {
 
-        numbers = new boolean[n + 1];
+        numbers = new boolean[n+1];
         preparePrimeList();
 
     }
